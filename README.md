@@ -85,10 +85,10 @@ Below is an example of the app's output. You can then open `cmd/drat-cli/static/
 This app currently support 3 types of crawler plugins for github projects: NPM, go-dep, pip  and ruby-gem
 
 
-## DRAT Webapp
+## DRAT Webapp (drat-web)
 Development for this app is currently on hold in favour of the drat-cli tool.
 
-This tool's intial code and design is inspired by the certificate transparency work done by Adam Eijdenberg from Cloud.gov.au team. You can find the repository for that [here](https://github.com/govau/certwatch/tree/master/jobs)
+This tool's application design with multiple worker nodes using postgresql as job queue is inspired by the certificate transparency work done by Adam Eijdenberg from Cloud.gov.au team. You can find the repository for that [here](https://github.com/govau/certwatch/tree/master/jobs)
 
 #### Running locally
 
