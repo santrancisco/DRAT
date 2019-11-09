@@ -1,0 +1,36 @@
+version: '2'
+services:
+  # dratpg:
+  #   image: postgres
+  #   container_name: dratpg
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     - POSTGRES_USER=dratpg
+  #     - POSTGRES_PASSWORD=dratpg
+  drat: 
+    container_name: drat
+    build:
+      context: .
+      dockerfile: ./Dockerfile.drat
+    network_mode: bridge
+    external_links:
+      - dratpg:dratpg
+    # depends_on:
+    #   - dratpg
+    # links:
+    #   - dratpg
+  web: 
+    container_name: drat-web
+    build:
+      context: .
+      dockerfile: ./Dockerfile.web
+    ports:
+       - "8080:8080"
+    network_mode: bridge
+    external_links:
+      - dratpg:dratpg
+    # depends_on:
+    #   - dratpg
+    # links:
+    #   - dratpg

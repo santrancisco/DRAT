@@ -1,0 +1,8 @@
+FROM alpine:latest
+RUN apk --no-cache add ca-certificates
+COPY bin/drat /
+COPY scripts/drat.sh /run.sh
+ENV VCAP_SERVICES '{"postgres": [{"credentials": {"username": "dratpg", "host": "dratpg", "password": "dratpg", "name": "dratpg", "port": 5432}, "tags": ["postgres"]}]}'
+ENV VCAP_APPLICATION '{}'
+ENV SUPPORTED_LANGUAGE '[go,ruby,python,javascript]'
+ENTRYPOINT ["/run.sh"]

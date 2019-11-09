@@ -1,0 +1,14 @@
+## Trying various spacing, include 	
+    django>=1.11.0,<2.0.0
+	django-axes>=4.0.0
+	pytz
+	logstash_formatter   >= 0.5.16
+	django-debug-toolbar
+	urlget
+-e git+https://github.com/AusDTO/dto-digitalmarketplace-apiclient.git@ab93a1978e8d0a72fc2695d2817ba06bdadfa45e#egg=dto_digitalmarketplace_apiclient==whatever
+-e git+https://github.com/AusDTO/dto-digitalmarketplace-content-loader.git@663ca400be81deeb4aec40445e45889e9ed1663e#egg=dto_digitalmarketplace_content_loader==whatever
+-e git+https://github.com/AusDTO/dto-digitalmarketplace-utils.git@f36910294bfe70ef6b0fd766b043a97469df06bf#egg=dto_digitalmarketplace_utils==whatever
+enum34==1.1.6
+Flask==0.12.1
+DOESNOTEXISTATALL
+Flask-FeatureFlags

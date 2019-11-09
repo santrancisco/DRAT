@@ -1,0 +1,69 @@
+{
+  "name": "digital-marketplace-frontend",
+  "description": "Front end application for the Digital Marketplace",
+  "version": "0.0.1",
+  "private": true,
+  "engine": "node >= 4.2",
+  "dependencies": {
+    "@gov.au/body": "^0.1.0",
+    "@gov.au/callout": "^0.1.0",
+    "@gov.au/page-alerts": "^0.1.0",
+    "@gov.au/pancake-sass": "^1.0.9",
+    "bower": "1.5.2",
+    "del": "1.1.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-bless": "3.1.0",
+    "gulp-connect": "^4.1.0",
+    "gulp-filelog": "0.4.1",
+    "gulp-include": "1.1.1",
+    "gulp-jasmine-phantom": "3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.1",
+    "gulp-sass-lint": "^1.2.0",
+    "gulp-shell": "0.2.9",
+    "gulp-sourcemaps": "1.5.2",
+    "gulp-svg2png": "^2.0.2",
+    "gulp-uglify": "1.4.0",
+    "phantomjs-prebuilt": "2.1.7",
+    "run-sequence": "^1.2.2",
+    "smoothscroll": "^0.2.2"
+  },
+  "scripts": {
+    "test": "./node_modules/gulp/bin/gulp.js test",
+    "frontend-install": "./node_modules/bower/bin/bower install",
+    "frontend-build:development": "./node_modules/gulp/bin/gulp.js build:development",
+    "frontend-build:production": "./node_modules/gulp/bin/gulp.js build:production",
+    "frontend-build:watch": "./node_modules/gulp/bin/gulp.js watch",
+    "frontend-build:livereload": "./node_modules/gulp/bin/gulp.js livereload",
+    "postinstall": "npm run frontend-install",
+    "framework:copy": "./node_modules/gulp/bin/gulp.js copy:ssp_content"
+  },
+  "devDependencies": {
+    "fs": "0.0.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.2.4"
+  },
+  "pancake": {
+    "auto-save": true,
+    "plugins": true,
+    "ignore": [],
+    "sass": {
+      "modules": false,
+      "location": "app/assets/scss/uikit2/",
+      "name": "uikit2.scss"
+    },
+    "css": {
+      "minified": true,
+      "modules": false,
+      "browsers": [
+        "last 2 versions",
+        "ie 8",
+        "ie 9",
+        "ie 10"
+      ],
+      "location": "pancake/css/",
+      "name": "pancake.min.css"
+    }
+  }
+}
