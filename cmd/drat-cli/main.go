@@ -8,8 +8,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/santrancisco/drat/cmd/drat-cli/jobs"
 	"github.com/santrancisco/cque"
+	"github.com/santrancisco/drat/cmd/drat-cli/jobs"
 	"github.com/santrancisco/logutils"
 	"gopkg.in/alecthomas/kingpin.v2"
 )
@@ -110,13 +110,18 @@ func main() {
 		log.Fatal(err)
 	}
 	if *outtofile != "" {
-		f, err := os.OpenFile(*outtofile, os.O_APPEND|os.O_CREATE|os.O_RDWR, 0666)
+		// delete file
+		_ = os.Remove(*outtofile)
+		log.Printf("[DEBUG] Done deleting file %s", *outtofile)
+		f, err := os.OpenFile(*outtofile, os.O_CREATE|os.O_RDWR, 0666)
 		if err != nil {
 			fmt.Println(string(b))
 			fmt.Printf("Having issue with opening file %s. The result is printed to stdout \n", *outtofile)
 			log.Fatal(err)
 		}
 		f.Write(b)
+		log.Printf("[DEBUG] Done writting a new ouput file %s", *outtofile)
+		log.Printf("[INFO] You can use ./static/index.html in chrome to parse the output.")
 	} else {
 		// If we don't specify a file output, dump it to stdout
 		fmt.Println(string(b))
