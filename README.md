@@ -5,9 +5,14 @@ I recently presented this tool at blackhat hacksmith in Vietnam and got some goo
 Unfortunately I am working fulltime + 2 kids and don't have much time to invest into this project so if you like the idea of giving risk score for dependencies and want to write more parsers for other languages, improve existing ones or support other type of code management api (gitlab, bitbucket), enrich the scoring logic - please feel free to make pull request or just build ontop of this tool. 
 
 
-## Dependency Risk Analysis Tool - DRAT
+## Dependency Risk Analysis Tool - DRAT - TLDR
 
 DRAT aims to provide **risk indicator** for libraries used by the developer for a given project.
+
+DRAT will help you answer questions like `which dependencies has not been updated for more than a year?`, `which dependencies has low reputation?`, `which dependencies are being managed by single individual?` ... 
+
+These answers can then be used to help you making the decision of what your local artifactory should cache or you could build some logic to scan and add high risk dependencies to a watchlist that you would monitor for new update. This way, you can catch any sign of compromised dependencies before the code make it to your system.
+
 
 Below is what the result looks like after running against a python project. Note that these are just potential risks associate with these dependencies being identified and not actually vulnerabilities.
 
